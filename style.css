@@ -276,6 +276,11 @@ footer {
   transform: scale(1.1);
 }
 
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+}
 /* Responsive and Hamburger Menu Styles */
 @media (max-width: 800px) {
   .about-content, .services-grid, .projects-grid, .footer-content {
