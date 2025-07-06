@@ -257,12 +257,22 @@ footer {
   flex-wrap: wrap;
 }
 
-/* --- Social Section Styles --- */
-.footer-content {
+.social-icon-link {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap; /* Ensures all stay on one line */
+}
+
+.social-icon-img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: grayscale(30%) brightness(1.2);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.social-icon-link:hover .social-icon-img {
+  filter: none;
+  transform: scale(1.1);
 }
 
 /* Responsive and Hamburger Menu Styles */
