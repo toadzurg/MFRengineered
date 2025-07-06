@@ -258,19 +258,18 @@ footer {
 }
 
 /* --- Social Section Styles --- */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Ensures all stay on one line */
+}
+
 .social-section {
   display: flex;
   align-items: center;
   gap: 0.8em;
-}
-
-.social-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  opacity: 0.7;
-  margin-right: 0.3em;
-  letter-spacing: 0.05em;
+  flex-wrap: nowrap; /* Ensures label and icons stay on one line */
 }
 
 .social-icons {
@@ -281,7 +280,6 @@ footer {
   margin: 0;
   padding: 0;
 }
-
 .social-icons li {
   display: flex;
   align-items: center;
