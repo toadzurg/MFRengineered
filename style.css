@@ -257,6 +257,7 @@ footer {
   flex-wrap: wrap;
 }
 
+/* --- Social Icon Styling --- */
 .social-icon-link {
   display: flex;
   align-items: center;
@@ -416,10 +417,6 @@ footer {
     align-items: center;
     gap: 0.5em;
     text-align: center;
-  }
-  .social-icons a {
-    margin-left: 0.5em;
-    font-size: 1.3rem;
   }
 }
 
