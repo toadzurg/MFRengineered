@@ -1,9 +1,9 @@
 :root {
-  --primary: #009688;         /* Teal */
-  --accent: #4DD0E1;          /* Aqua/Light Teal */
-  --highlight: #26A69A;       /* Greenish Teal */
-  --bg-light: #E0F7FA;        /* Pale Aqua */
-  --text-dark: #18443d;       /* Deep Green */
+  --primary: #009688;
+  --accent: #4DD0E1;
+  --highlight: #26A69A;
+  --bg-light: #E0F7FA;
+  --text-dark: #18443d;
   --white: #fff;
 }
 
@@ -45,11 +45,6 @@ header {
   gap: 0.5em;
 }
 
-.logo .wave {
-  font-size: 2rem;
-  color: var(--accent);
-}
-
 .nav ul {
   display: flex;
   list-style: none;
@@ -73,7 +68,6 @@ header {
   color: var(--white);
   padding: 4rem 1rem 6rem 1rem;
   text-align: center;
-  position: relative;
 }
 
 .hero-content h1 {
@@ -129,10 +123,10 @@ h2 {
 
 .about-content {
   display: flex;
-  gap: 2rem;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 2rem;
 }
 
 .profile-img {
@@ -144,21 +138,24 @@ h2 {
   box-shadow: 0 2px 8px rgba(0, 150, 136, 0.08);
 }
 
-.services-grid {
+.services-grid, .projects-grid {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card, .project-card {
+  background: var(--white);
+  border-radius: 1em;
+  box-shadow: 0 2px 10px rgba(0,150,136,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+  max-width: 320px;
+  text-align: center;
 }
 
 .service-card {
-  background: var(--white);
-  border-radius: 1em;
-  box-shadow: 0 2px 10px rgba(0, 150, 136, 0.06);
   padding: 2em 1.5em;
-  max-width: 260px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
   border-bottom: 4px solid var(--highlight);
 }
 
@@ -171,22 +168,6 @@ h2 {
   font-size: 2.5rem;
   color: var(--accent);
   margin-bottom: 0.7em;
-}
-
-.projects-grid {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.project-card {
-  background: var(--white);
-  border-radius: 1em;
-  overflow: hidden;
-  max-width: 320px;
-  box-shadow: 0 2px 10px rgba(0,150,136,0.06);
-  transition: box-shadow 0.2s;
 }
 
 .project-card img {
@@ -202,28 +183,6 @@ h2 {
 
 .project-card:hover {
   box-shadow: 0 8px 24px rgba(0,150,136,0.15);
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  max-width: 400px;
-  margin: 0 auto 2em auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.7em;
-  border: 1px solid var(--accent);
-  border-radius: 0.5em;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
-}
-
-.contact-form textarea {
-  min-height: 100px;
 }
 
 .contact-info {
@@ -252,12 +211,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   max-width: 1000px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
-/* --- Social Icon Styling --- */
 .social-icon-link {
   display: flex;
   align-items: center;
@@ -266,7 +226,6 @@ footer {
 .social-icon-img {
   width: 24px;
   height: 24px;
-  display: block;
   filter: grayscale(30%) brightness(1.2);
   transition: filter 0.2s, transform 0.2s;
 }
@@ -276,12 +235,13 @@ footer {
   transform: scale(1.1);
 }
 
+/* Responsive Navigation */
 @media (min-width: 1024px) {
   .nav-toggle {
     display: none;
   }
 }
-/* Responsive and Hamburger Menu Styles */
+
 @media (max-width: 800px) {
   .about-content, .services-grid, .projects-grid, .footer-content {
     flex-direction: column;
@@ -289,10 +249,21 @@ footer {
     gap: 2rem;
   }
   .nav ul {
+    flex-direction: column;
     gap: 1em;
+    background: var(--primary);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    padding: 1em 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: none;
+    z-index: 1000;
   }
-
-  /* Hamburger Button Styles */
+  .nav.open ul {
+    display: flex;
+  }
   .nav-toggle {
     display: block;
     background: none;
@@ -311,8 +282,7 @@ footer {
     position: relative;
     transition: all 0.3s ease;
   }
-  .hamburger::before,
-  .hamburger::after {
+  .hamburger::before, .hamburger::after {
     content: '';
     position: absolute;
     left: 0;
@@ -322,26 +292,6 @@ footer {
   }
   .hamburger::after {
     top: 8px;
-  }
-  .nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 1em;
-    background: var(--primary);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    margin: 0;
-    padding: 1em 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    z-index: 1000;
-  }
-  .nav.open ul {
-    display: flex;
-  }
-  .nav {
-    position: relative;
   }
   .nav.open .hamburger {
     background: transparent;
@@ -354,29 +304,14 @@ footer {
   }
 }
 
-/* Even more mobile-friendly tweaks */
 @media (max-width: 600px) {
   html {
     font-size: 16px;
   }
-  .nav {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.8rem 0.5rem;
-  }
   .logo {
     justify-content: center;
-    margin-bottom: 0.5em;
     font-size: 1.2rem;
-  }
-  .nav ul {
-    flex-direction: column;
-    gap: 0.5em;
-    align-items: center;
-  }
-  .nav li {
-    width: 100%;
-    text-align: center;
+    margin-bottom: 0.5em;
   }
   .hero {
     padding: 2.5rem 0.5rem 3.5rem 0.5rem;
@@ -391,42 +326,23 @@ footer {
     font-size: 1.3rem;
     margin-bottom: 1rem;
   }
-  .about-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
   .profile-img {
     width: 110px;
     height: 110px;
   }
-  .services-grid,
-  .projects-grid {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .service-card,
-  .project-card {
-    max-width: 100%;
-    min-width: 0;
+  .service-card, .project-card {
     width: 100%;
+    max-width: 100%;
   }
   .project-card img {
     height: 130px;
   }
-  .contact-form {
-    max-width: 100%;
-    padding: 0 0.2em;
-  }
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    text-align: center;
-  }
 }
 
-/* Responsive images and media */
-img, video, iframe {
+/* Media Elements */
+img,
+video,
+iframe {
   max-width: 100%;
   height: auto;
   display: block;
