@@ -15,7 +15,7 @@
         <img src="/images/logo.png" alt="Company Logo" style="height:4rem;">
         <span>Engineering, PLLC</span>
       </div>
-      <button class="nav-toggle" aria-label="Open navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger"></span>
       </button>
       <ul>
@@ -43,9 +43,8 @@
         <img src="/images/profile_headshot.jpg" alt="Miranda Fae Robinson" class="profile-img">
         <div>
           <p>
-            <strong>M</strong>iranda <strong>F</strong>ae <strong>R</strong>obinson is the founder and principal engineer of <strong>MFR Engineering, PLLC</strong>, a forward-thinking firm specializing in water resource solutions, renewable energy sites and sustainable engineering. Miranda is a licensed <strong>Professional Civil Engineer in New York and numerous other states</strong>, bringing a wealth of expertise and a broad perspective to every project.<br><br>
-            As a proud <strong>MWBE-certified (Minority and Women-Owned Business Enterprise) company in New York State</strong>, MFR Engineering, PLLC is committed to delivering exceptional quality and innovative results while promoting diversity and inclusion in the industry.<br><br>
-            With years of experience and a passion for excellence, Miranda leads every project with integrity, technical expertise, and a dedication to building a better, more sustainable future for our communities.
+            <strong>M</strong>iranda <strong>F</strong>ae <strong>R</strong>obinson is the founder and principal engineer of <strong>MFR Engineering, PLLC</strong>, a forward-thinking firm specializing in water resource solutions, renewable energy sites and sustainable engineering. She’s a licensed <strong>Professional Civil Engineer in New York and other states</strong> and leads every project with integrity and expertise.<br><br>
+            As a proud <strong>MWBE-certified company in New York State</strong>, MFR Engineering promotes diversity and delivers exceptional quality for communities seeking resilient, sustainable infrastructure.
           </p>
         </div>
       </div>
@@ -59,17 +58,17 @@
         <div class="service-card">
           <div class="service-icon">&#9881;</div>
           <h3>Consulting</h3>
-          <p>Professional engineering consulting with a focus on water resource management, renewable energy and sustainability.</p>
+          <p>Engineering guidance focused on water resources, energy and sustainability.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">&#129517;</div>
           <h3>Design & Planning</h3>
-          <p>Modern, efficient designs tailored to your project’s needs, from conception to completion.</p>
+          <p>Smart, efficient solutions from concept to completion.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">&#128736;</div>
           <h3>Project Management</h3>
-          <p>End-to-end project management ensuring timely delivery and top-tier quality.</p>
+          <p>Hands-on delivery with attention to quality and timelines.</p>
         </div>
       </div>
     </div>
@@ -80,24 +79,24 @@
       <h2>Projects</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <img src="https://placehold.co/320x180?text=Project+1" alt="Project 1">
+          <img src="https://placehold.co/320x180?text=Project+1" alt="Renewable Energy Project">
           <div class="project-info">
             <h4>Renewable Energy</h4>
-            <p>Eco-friendly renewable energy projects at commercial and residential scale.</p>
+            <p>Commercial and residential eco-friendly energy solutions.</p>
           </div>
         </div>
         <div class="project-card">
-          <img src="https://placehold.co/320x180?text=Project+2" alt="Project 2">
+          <img src="https://placehold.co/320x180?text=Project+2" alt="Stormwater Management Project">
           <div class="project-info">
             <h4>Stormwater Management</h4>
-            <p>Innovative solutions for sustainable stormwater handling in urban, suburban and commercial spaces.</p>
+            <p>Resilient designs for stormwater handling across all site types.</p>
           </div>
         </div>
         <div class="project-card">
-          <img src="https://placehold.co/320x180?text=Project+3" alt="Project 3">
+          <img src="https://placehold.co/320x180?text=Project+3" alt="Water Treatment Project">
           <div class="project-info">
             <h4>Water Treatment Design</h4>
-            <p>Designing modern water treatment systems for clean and safe water supply.</p>
+            <p>Modern water treatment systems for safer water access.</p>
           </div>
         </div>
       </div>
@@ -117,21 +116,25 @@
   <footer>
     <div class="container footer-content">
       <span>&copy; 2025 Miranda Fae Robinson / MFR Engineering, PLLC</span>
-      <a href="https://www.linkedin.com/in/miranda-robinson-a9577120/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon-link">
+      <a href="https://www.linkedin.com/in/miranda-robinson-a9577120/" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn profile">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="social-icon-img">
       </a>
     </div>
   </footer>
+
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
+
     navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const expanded = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', expanded);
     });
-    // Optional: Close menu when a link is clicked (for single page sites)
-    document.querySelectorAll('.nav ul a').forEach(link => {
+
+    document.querySelectorAll('.nav a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
       });
     });
   </script>
