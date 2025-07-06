@@ -15,6 +15,9 @@
         <span class="wave">&#128167;</span>
         <span>MFR Engineering, PLLC</span>
       </div>
+      <button class="nav-toggle" aria-label="Open navigation">
+        <span class="hamburger"></span>
+      </button>
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -126,5 +129,18 @@
       </div>
     </div>
   </footer>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+    // Optional: Close menu when a link is clicked (for single page sites)
+    document.querySelectorAll('.nav ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
