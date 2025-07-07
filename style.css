@@ -256,18 +256,18 @@ footer {
     gap: 2rem;
   }
   .nav ul {
-  position: fixed;
-  top: 60px;
-  right: 0;
-  background: var(--primary);
-  width: 220px;
-  height: auto;
-  padding: 1em;
-  display: none;
-  flex-direction: column;
-  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-  z-index: 1500;
-  border-radius: 0 0 0 0.5em;
+    flex-direction: column;
+    gap: 1em;
+    background: var(--primary);
+    padding: 1em 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    align-items: flex-end;
+    padding-right: 2rem;
 }
   .nav ul li {
     text-align: right;
