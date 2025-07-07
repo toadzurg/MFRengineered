@@ -236,13 +236,13 @@ footer {
 }
 
 /* Responsive Navigation */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .nav-toggle {
     display: none;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .about-content, .services-grid, .projects-grid, .footer-content {
     flex-direction: column;
     align-items: center;
