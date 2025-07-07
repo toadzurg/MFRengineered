@@ -230,6 +230,25 @@ footer {
   transition: filter 0.2s, transform 0.2s;
 }
 
+.social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.social-row span {
+  font-weight: 600;
+}
+
+.social-icon-img {
+  width: 24px;
+  height: 24px;
+}
+
 .social-icon-link:hover .social-icon-img {
   filter: none;
   transform: scale(1.1);
