@@ -14,13 +14,15 @@
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger"></span>
       </button>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Connect</a></li>
-      </ul>
+      <div class="nav-menu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Connect</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -123,14 +125,16 @@
 
   <script>
     const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
+    const navMenu = document.querySelector('.nav-menu');
+    
     navToggle.addEventListener('click', () => {
-      const expanded = nav.classList.toggle('open');
+      const expanded = navMenu.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', expanded);
     });
+    
     document.querySelectorAll('.nav a').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('open');
+        navMenu.classList.remove('open');
         navToggle.setAttribute('aria-expanded', false);
       });
     });
