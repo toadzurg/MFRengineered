@@ -28,7 +28,7 @@ header {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   max-width: 1080px;
   margin: 0 auto;
