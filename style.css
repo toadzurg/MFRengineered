@@ -27,22 +27,27 @@ header {
 }
 
 .nav {
-
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 1.2rem 1rem;
-  position: fixed;;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--primary);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2em;
-  transition: max-height 0.3s;
+  position: fixed;
+  top: 60px; /* make room for the navbar or hamburger */
+  right: 0;
+  background: var(--primary);
+  width: 220px;
+  height: auto;
+  padding: 1em;
+  display: none;
+  flex-direction: column;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+  z-index: 1500;
+  border-radius: 0 0 0 0.5em;
 }
 
 .nav a {
