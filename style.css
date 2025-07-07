@@ -36,14 +36,7 @@ header {
   position: relative;
 }
 
-.logo {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
+
 
 .nav ul {
   display: flex;
