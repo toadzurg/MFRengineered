@@ -260,10 +260,18 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     display: none;
     z-index: 1000;
+    /* ----------- NEW/CHANGED: right-justify and pad ---------- */
+    align-items: flex-end;
+    padding-right: 2rem; /* Adjust this to match your site's main container */
+  }
+  .nav ul li {
+    text-align: right;
+    width: 100%;
   }
   .nav.open ul {
     display: flex;
   }
+  /* ----------- NEW: sticky/floating hamburger ----------- */
   .nav-toggle {
     display: block;
     background: none;
@@ -271,7 +279,14 @@ footer {
     cursor: pointer;
     padding: 0.5em;
     margin-left: auto;
-    z-index: 1100;
+    z-index: 2000;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    /* Optional: Add subtle background for contrast */
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
   .hamburger, .hamburger::before, .hamburger::after {
     display: block;
@@ -301,30 +316,6 @@ footer {
   }
   .nav.open .hamburger::after {
     transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 16px;
-  }
-  .logo {
-    justify-content: center;
-    font-size: 1.2rem;
-    margin-bottom: 0.5em;
-  }
-  .hero {
-    padding: 2.5rem 0.5rem 3.5rem 0.5rem;
-  }
-  .hero-content h1 {
-    font-size: 1.6rem;
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
   }
   .profile-img {
     width: 110px;
