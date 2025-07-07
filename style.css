@@ -286,7 +286,7 @@ footer {
     padding: 0.5em;
     margin-left: auto;
     z-index: 2000;
-    position: right;
+    position: relative;
     top: 1rem;
     right: 1rem;
     background: rgba(0,0,0,0.05);
