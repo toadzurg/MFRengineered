@@ -27,27 +27,28 @@ header {
 }
 
 .nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--primary);
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+  position: relative;
 }
 
 .nav ul {
-  position: fixed;
-  top: 60px; /* make room for the navbar or hamburger */
-  right: 0;
-  background: var(--primary);
-  width: 220px;
-  height: auto;
-  padding: 1em;
-  display: none;
   flex-direction: column;
-  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-  z-index: 1500;
-  border-radius: 0 0 0 0.5em;
+  gap: 1em;
+  background: var(--primary);
+  padding: 1em 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: none;
+  z-index: 1000;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  align-items: flex-end;
+  padding-right: 2rem;
 }
 
 .nav a {
@@ -256,7 +257,7 @@ footer {
   }
   .nav ul {
   position: fixed;
-  top: 60px; /* make room for the navbar or hamburger */
+  top: 60px;
   right: 0;
   background: var(--primary);
   width: 220px;
@@ -277,16 +278,19 @@ footer {
   }
 
 .nav-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2000;
-  background: rgba(0,0,0,0.05);
-  border: none;
-  border-radius: 50%;
-  padding: 0.6em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  cursor: pointer;
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+    margin-left: auto;
+    z-index: 2000;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
   .hamburger, .hamburger::before, .hamburger::after {
     display: block;
