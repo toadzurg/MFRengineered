@@ -256,9 +256,11 @@ footer {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     display: none;
     z-index: 1000;
-    /* ----------- NEW/CHANGED: right-justify and pad ---------- */
+    position: absolute;
+    top: 100%;
+    left: 0;
     align-items: flex-end;
-    padding-right: 2rem; /* Adjust this to match your site's main container */
+    padding-right: 2rem;
   }
   .nav ul li {
     text-align: right;
@@ -267,7 +269,7 @@ footer {
   .nav.open ul {
     display: flex;
   }
-  /* ----------- NEW: sticky/floating hamburger ----------- */
+
   .nav-toggle {
     display: block;
     background: none;
