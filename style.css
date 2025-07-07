@@ -244,16 +244,6 @@ footer {
   font-weight: 600;
 }
 
-.social-icon-img {
-  width: 24px;
-  height: 24px;
-}
-
-.social-icon-link:hover .social-icon-img {
-  filter: none;
-  transform: scale(1.1);
-}
-
 @media (min-width: 768px) {
   .nav-toggle {
     display: none;
