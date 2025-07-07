@@ -18,7 +18,6 @@ body {
   color: var(--text-dark);
   background: var(--bg-light);
   line-height: 1.6;
-  padding-top: 80px; /* space for sticky nav */
 }
 
 header {
@@ -30,7 +29,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  height: 80px;
 }
 
 .nav {
