@@ -27,12 +27,15 @@ header {
 }
 
 .nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--primary);
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+  position: fixed;;
 }
 
 .nav ul {
