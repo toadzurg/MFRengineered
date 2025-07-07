@@ -247,9 +247,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-  .nav-toggle {
-    background: red !important;
-  }
   }
   .nav ul {
     flex-direction: column;
@@ -290,6 +287,7 @@ footer {
     background: rgba(0,0,0,0.05);
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: red !important;
   }
   .hamburger, .hamburger::before, .hamburger::after {
     display: block;
@@ -341,4 +339,3 @@ iframe {
   height: auto;
   display: block;
 }
-body { border: 5px solid red !important; }
