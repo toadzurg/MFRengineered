@@ -133,20 +133,19 @@ body {
 }
 
 .nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  gap: 1rem;
+  position: relative;
+}
+
+.nav-toggle {
+  position: absolute;
+  top: -2.8rem;           /* adjust as needed based on spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
 }
 
 /* Optional fine-tune */
 .nav-menu {
-  margin: 0;
-  padding: 0;
-}
-
-.nav-toggle {
   margin: 0;
   padding: 0;
 }
