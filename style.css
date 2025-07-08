@@ -373,16 +373,6 @@ footer {
   .project-card img {
     height: 130px;
   }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav.open .nav-menu {
-    display: flex;
-  }
 }
 
 @media (min-width: 768px) {
