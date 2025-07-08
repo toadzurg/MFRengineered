@@ -123,15 +123,15 @@
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
-
+  
     navToggle.addEventListener('click', () => {
-      const expanded = navMenu.classList.toggle('open');
+      const expanded = nav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', expanded);
     });
-
+  
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
+        nav.classList.remove('open');
         navToggle.setAttribute('aria-expanded', false);
       });
     });
