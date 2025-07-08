@@ -121,20 +121,26 @@
   </footer>
 
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-  
-    navToggle.addEventListener('click', () => {
-      const expanded = nav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', expanded);
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+
+  // Ensure nav is closed on load
+  nav.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+
+  navToggle.addEventListener("click", () => {
+    const expanded = nav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", expanded);
+  });
+
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
-  
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', false);
-      });
-    });
+  });
+});
   </script>
 </body>
 </html>
