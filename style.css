@@ -59,19 +59,28 @@ body {
   position: relative;
 }
 
+/* === Hamburger container button === */
 .nav-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
 }
 
+/* === The hamburger bars === */
 .hamburger {
+  position: relative;
   width: 30px;
   height: 3px;
   background: var(--white);
-  position: relative;
-  transition: all 0.3s ease;
+  border-radius: 2px;
+  transition: background 0.3s ease;
 }
 
 .hamburger::before,
@@ -81,22 +90,31 @@ body {
   width: 30px;
   height: 3px;
   background: var(--white);
-  transition: all 0.3s ease;
+  border-radius: 2px;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
 }
 
-.hamburger::before { top: -8px; }
-.hamburger::after { top: 8px; }
+.hamburger::before {
+  top: -8px;
+}
 
+.hamburger::after {
+  bottom: -8px;
+}
+
+/* === Transform into an X when nav is open === */
 .nav.open .hamburger {
   background: transparent;
 }
+
 .nav.open .hamburger::before {
   transform: rotate(45deg);
   top: 0;
 }
+
 .nav.open .hamburger::after {
   transform: rotate(-45deg);
-  top: 0;
+  bottom: 0;
 }
 
 .nav-menu {
@@ -112,6 +130,7 @@ body {
 }
 
 .nav-menu li {
+  list-style: none;
   text-align: center;
   padding: 1em;
 }
