@@ -355,3 +355,31 @@ footer {
     height: 130px;
   }
 }
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    background: none;
+    animation: none;
+    padding: 0;
+  }
+
+  .nav-menu li {
+    padding: 0;
+    margin-left: 2rem;
+    text-align: right;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
