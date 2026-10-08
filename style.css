@@ -193,7 +193,7 @@ body {
 .hero {
   background: linear-gradient(120deg, var(--primary) 60%, var(--hero-end));
   color: var(--white);
-  padding: 4rem 1rem 6rem;
+  padding: 2.5rem 1rem 3rem;
   text-align: center;
   margin-top: 0;
 }
@@ -206,7 +206,7 @@ body {
 
 .hero-content p {
   font-size: 1.3rem;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }
 
 /*-----------------------------------
@@ -416,7 +416,7 @@ footer {
 
   /* at 2.8rem the heading ran to four lines and filled the first screen */
   .hero {
-    padding: 3rem 1rem 4rem;
+    padding: 2rem 1rem 2.5rem;
   }
 
   .hero-content h1 {
