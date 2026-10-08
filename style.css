@@ -448,6 +448,7 @@ footer {
     display: flex !important;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center; /* the Sign in pill is taller; centre the row so its text lines up */
     width: auto;
     margin-top: 0;
     background: none;
