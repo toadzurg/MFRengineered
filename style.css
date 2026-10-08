@@ -247,7 +247,7 @@ h2 {
 .about-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start; /* photo level with the first line, not the middle of the text */
   justify-content: center;
   gap: 2rem;
 }
