@@ -414,6 +414,19 @@ footer {
     height: 110px;
   }
 
+  /* at 2.8rem the heading ran to four lines and filled the first screen */
+  .hero {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.15rem;
+  }
+
   .service-card,
   .project-card {
     flex: none; /* the 260px basis would become a height in this column */
