@@ -1,10 +1,14 @@
 /*-----------------------------------
   🌿 Design Tokens & Base Reset
 -----------------------------------*/
+/* --primary and --highlight are one step darker than the original
+   #009688 / #26A69A so white text on them, and they on --bg-light,
+   pass the 4.5:1 contrast minimum. */
 :root {
-  --primary: #009688;
+  --primary: #00796B;
   --accent: #4DD0E1;
-  --highlight: #26A69A;
+  --highlight: #00695C;
+  --hero-end: #00838F;
   --bg-light: #E0F7FA;
   --text-dark: #18443d;
   --white: #fff;
@@ -14,6 +18,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* keeps a section heading clear of the sticky header after a menu jump */
+html {
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -53,10 +62,20 @@ body {
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.15rem;
+  color: var(--white);
+  text-decoration: none;
 }
 
 /* === Hamburger container button === */
@@ -87,6 +106,7 @@ body {
 .hamburger::after {
   content: '';
   position: absolute;
+  left: 0; /* without it the button's centred text pushes these two bars 15px right */
   width: 30px;
   height: 3px;
   background: var(--white);
@@ -121,6 +141,7 @@ body {
   display: none;
   flex-direction: column;
   width: 100%;
+  margin-top: 0.5rem;
   background: var(--primary);
   animation: slideDown 0.3s ease-out forwards;
 }
@@ -170,7 +191,7 @@ body {
   🌇 Hero Section
 -----------------------------------*/
 .hero {
-  background: linear-gradient(120deg, var(--primary) 70%, var(--accent));
+  background: linear-gradient(120deg, var(--primary) 60%, var(--hero-end));
   color: var(--white);
   padding: 4rem 1rem 6rem;
   text-align: center;
@@ -192,8 +213,9 @@ body {
   💎 Accent Button
 -----------------------------------*/
 .btn-accent {
-  background: var(--highlight);
-  color: var(--white);
+  display: inline-block;
+  background: var(--white);
+  color: var(--primary);
   border: none;
   padding: 0.8em 2em;
   font-size: 1.1rem;
@@ -205,9 +227,10 @@ body {
   text-decoration: none;
 }
 
-.btn-accent:hover {
+.btn-accent:hover,
+.btn-accent:focus-visible {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 /*-----------------------------------
@@ -227,6 +250,10 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+}
+
+.about-content > div {
+  max-width: 68ch;
 }
 
 .profile-img {
@@ -254,7 +281,10 @@ h2 {
   background: var(--white);
   border-radius: 1em;
   box-shadow: 0 2px 10px rgba(0, 150, 136, 0.06);
+  /* three to a row in the 1000px column: 3 x 312 + 2 gaps = 1000 */
+  flex: 1 1 260px;
   max-width: 320px;
+  overflow: hidden;
   text-align: center;
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -264,15 +294,21 @@ h2 {
   border-bottom: 4px solid var(--highlight);
 }
 
-.service-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 150, 136, 0.12);
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 150, 136, 0.12);
+  }
 }
 
 .service-icon {
-  font-size: 2.5rem;
-  color: var(--accent);
+  color: var(--primary);
   margin-bottom: 0.7em;
+}
+
+.service-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .project-card img {
@@ -314,7 +350,7 @@ h2 {
 footer {
   background: var(--primary);
   color: var(--white);
-  padding: 1.2rem 0;
+  padding: 1.2rem 1rem;
   margin-top: 2rem;
 }
 
@@ -380,6 +416,7 @@ footer {
 
   .service-card,
   .project-card {
+    flex: none; /* the 260px basis would become a height in this column */
     width: 100%;
     max-width: 100%;
   }
@@ -391,9 +428,7 @@ footer {
 
 @media (min-width: 768px) {
   .nav {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    flex-wrap: nowrap;
   }
 
   .nav-menu {
@@ -401,6 +436,7 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
     width: auto;
+    margin-top: 0;
     background: none;
     animation: none;
     padding: 0;
